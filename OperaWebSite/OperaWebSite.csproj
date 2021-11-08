@@ -102,6 +102,7 @@
     <Compile Include="Controllers\OperaController.cs" />
     <Compile Include="Data\OperaDbContext.cs" />
     <Compile Include="Data\OperasInitializer.cs" />
+    <Compile Include="Filters\MyFilterAction.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -7,7 +7,14 @@
     <title>Index</title>
 </head>
 <body>
-    <p>@Html.ActionLink("Create New","Create","Opera")</p>
+    <p>@Html.ActionLink("Create New", "Create", "Opera")</p>
+    @using (Html.BeginForm("SearchByYear", "Opera", FormMethod.Get))
+    {
+        @Html.TextBox("year", 0)
+
+        <input type="submit" value="Get" />
+    }
+
     <table>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Title)</th>
@@ -18,20 +25,20 @@
         </tr>
         @foreach (var item in Model)
         {
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.Title)</td>
-        <td>@Html.DisplayFor(modelItem => item.Composer)</td>
-        <td>@Html.DisplayFor(modelItem => item.Year)</td>
-        <td>
-            @Html.ActionLink("Detail", "Detail", new { id = item.OperaId })
-        </td>
-        <td>
-            @Html.ActionLink("Delete", "Delete", new { id = item.OperaId })
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.OperaId })
-        </td>
-    </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Composer)</td>
+                <td>@Html.DisplayFor(modelItem => item.Year)</td>
+                <td>
+                    @Html.ActionLink("Detail", "Detail", new { id = item.OperaId })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.OperaId })
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.OperaId })
+                </td>
+            </tr>
         }
     </table>
 </body>

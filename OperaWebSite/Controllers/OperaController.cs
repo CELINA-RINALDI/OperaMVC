@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using OperaWebSite.Models;
 using OperaWebSite.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace OperaWebSite.Controllers
 {
@@ -119,6 +120,34 @@ namespace OperaWebSite.Controllers
             }
             return View("Edit", opera); 
         }
+        public ActionResult SearchByYear(int year)
+        {
+            if (year == 0)
+            {
+                return RedirectToAction("Index");
+            }
+            List<Opera> operasYear = (from o in context.Operas
+                                      where o.Year == year
+                                      select o).ToList();
+            return View("Index", operasYear);
+        }
+
+
+     /*   // FITLRO DE ACCION - ANTES 
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            var controller = filterContext.RouteData.Values["controller"];
+            var action = filterContext.RouteData.Values["action"];
+            Debug.WriteLine("controller: " + controller + "action: " + action + " Paso por OnActionExecuting");
+        }
+
+        // FILTRO DE AACION - DESPUES
+        protected override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+            var controller = filterContext.RouteData.Values["controller"];
+            var action = filterContext.RouteData.Values["action"];
+            Debug.WriteLine("controller: " + controller + "action: " + action + " Paso por OnActionExecuted");
+        }   */
 
     }
 }
