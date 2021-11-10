@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header">
+        <div id="banner"><h1>Opera Web Site</h1></div>
+        <div id="login"><h3>Iniciar sesion</h3></div>
+    </div>
+    <div id="menu">
+       <ul>
+           <li>  <button> @Html.ActionLink("Inicio", "Index", "Home")</button></li>
+           
+           <li><button> @Html.ActionLink("Operas", "Index", "Opera")</button></li>
+      </ul>
+    </div>
+    <div class="container">
+        <div id="izq">
+            @if (IsSectionDefined("Izq"))
+            {
+                @RenderSection("Izq")
+            }
+            else
+            {
+                <h4>Direccion: Cerrito 628 </h4>
+                <h4>Telefono: 011 4378-7100 </h4>
+            }
+        </div>
+
+        <div id="content">
+            @RenderBody()
+        </div>
+        <div id="der">
+            @if (IsSectionDefined("Der"))
+            {
+                @RenderSection("Der")
+            }
+            else
+            {
+                <h4>El teatro</h4>
+                <br />
+                <img src="http://teatrocolon.org.ar/sites/default/files/styles/d8/public/2019-10/teatro-colon_exterior_001.jpg?itok=H4-VExa7" style="height:250px" />
+                <img src="https://thumbs.dreamstime.com/z/exterior-del-hist%C3%B3rico-teatro-col%C3%B3n-en-buenos-aires-argentina-de-agosto-el-es-principal-%C3%B3pera-ac%C3%BAsticamente-considerado-uno-165630504.jpg" style="height:250px" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Buenos_Aires_Teatro_Colon_2.jpg" style="height:250px" />
+            }
+        </div>
+    </div>
+    <div id="footer"><p>Contacto: ventas@teatrocolon.com</p></div>
+</body>
+</html>

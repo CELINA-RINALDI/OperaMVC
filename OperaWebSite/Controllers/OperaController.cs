@@ -7,9 +7,11 @@ using OperaWebSite.Models;
 using OperaWebSite.Data;
 using System.Data.Entity;
 using System.Diagnostics;
+using OperaWebSite.Filters; 
 
 namespace OperaWebSite.Controllers
 {
+    [MyFilterAction]
     public class OperaController : Controller
     {
         // crear una instancia del dbcontext
@@ -17,6 +19,7 @@ namespace OperaWebSite.Controllers
         // GET: Opera
         public ActionResult Index()
         {
+            ViewBag.Fecha = DateTime.Now.ToShortDateString();
             // traer todas las operas usando EF
             var operas = context.Operas.ToList();
 

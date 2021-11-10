@@ -1,0 +1,66 @@
+﻿#body {
+
+}
+#banner {
+    text-align: center; 
+    float: left;
+    width: 65%;
+    background-image: url(https://diarioz.com.ar/wp-content/uploads/2020/04/Teatro-col%C3%B3n.jpg);
+}
+#login {
+    float: right;
+    width: 35%;
+    background-color: #483434;
+    text-align: center;
+}
+
+#menu {
+    text-align: right;
+    height: 50px;
+    width: 100%;
+    background-color: #6B4F4F; 
+    color: white;
+}
+#izq {
+    float: left;
+    width: 32%;
+    margin: 5px;
+    padding: 5px;
+    background-color: #EED6C4;
+}
+#content {
+    width: 32%;
+    text-align: center;
+    margin: 0;
+    display: inline-block;
+}
+#der {
+    background-color: #EED6C4;
+    float: right;
+    width: 32%;
+    padding: 5px;
+    display: inline-grid;
+    text-align: center;
+}
+#footer {
+    background-color: #FFF3E4;
+    color: black; 
+    text-align:right;
+    clear:both;
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: 40%;
+}
+.header {
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    height: 100px;
+}
+button {
+    color: antiquewhite; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+

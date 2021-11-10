@@ -94,12 +94,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OperaController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Data\OperaDbContext.cs" />
     <Compile Include="Data\OperasInitializer.cs" />
     <Compile Include="Filters\MyFilterAction.cs" />
@@ -127,6 +130,12 @@
     <Content Include="Views\Opera\Detail.cshtml" />
     <Content Include="Views\Opera\Delete.cshtml" />
     <Content Include="Views\Opera\Edit.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Test\Login.cshtml" />
+    <Content Include="Views\Test\SearchByTitle.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
